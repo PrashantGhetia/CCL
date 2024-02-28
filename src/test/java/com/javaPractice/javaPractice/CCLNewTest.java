@@ -51,6 +51,7 @@ public class CCLNewTest {
 		WebElement phoneTextField = driver.findElement(By.id("var-input-9"));
 		wUtil.waitForElementToBeVisible(driver, phoneTextField);
 		phoneTextField.sendKeys(phoneNumber);
+		System.out.println("Phone Number: "+phoneNumber );
 
 		WebElement passwordTextField = driver.findElement(By.id("var-input-14"));
 		wUtil.waitForElementToBeVisible(driver, passwordTextField);
@@ -75,6 +76,7 @@ public class CCLNewTest {
 				wUtil.waitForElementToBeVisible(driver, countdown);
 				String countDown = countdown.getText().replaceAll("[\r\n]+", "");
 				eUtil.writeDataIntoExcel("CCL1", i, j, countDown);
+				System.out.println("Countdown :"+countDown);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -103,7 +105,9 @@ public class CCLNewTest {
 		wUtil.waitForElementToBeVisible(driver, balance);
 
 		eUtil.writeDataIntoNewExcel("CCL1", i, 3, formatter.format(date));
+		System.out.println("Date: "+formatter.format(date));
 		eUtil.writeDataIntoNewExcel("CCL1", i, 4, balance.getText());
+		System.out.println("Balance: "+balance.getText());
 
 		WebElement signout = driver.findElement(By.xpath("//div[text()='Sign Out']"));
 		wUtil.waitForElementToBeVisible(driver, signout);
