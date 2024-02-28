@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
-public class FakeDataTest {
+public class FakeData {
 	@Test
 	public void test() {
 		Faker fakeData = new Faker(new Locale("en-IND"));
