@@ -4,11 +4,19 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.swing.GroupLayout.Alignment;
+
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.util.ZipSecureFile;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
@@ -33,6 +41,7 @@ public class ExcelFileUtility {
 	 */
 	public String readDataFromExcel(String sheetName, int rownum, int cellnum) throws EncryptedDocumentException, IOException {
 		//String value = "";
+		//ZipSecureFile.setMinInflateRatio(0);
 		FileInputStream fis = new FileInputStream(IConstantsUtility.ExcelFilePath);
 		Workbook wb = WorkbookFactory.create(fis);
 		Cell cell = wb.getSheet(sheetName).getRow(rownum).getCell(cellnum);
@@ -88,11 +97,27 @@ public class ExcelFileUtility {
 	 * @throws IOException 
 	 * @throws EncryptedDocumentException 
 	 */
-	public void writeDataIntoExcel(String sheetName, int rownum, int cellnum, String value) throws EncryptedDocumentException, IOException {
+	public void writeDataIntoExcel(String sheetName, int rownum, int cellnum, String value, int numberOfLinesInString) throws EncryptedDocumentException, IOException {
 		FileInputStream fis = new FileInputStream(IConstantsUtility.ExcelFilePath);
 		Workbook wb = WorkbookFactory.create(fis);
 		Cell cell = wb.getSheet(sheetName).getRow(rownum).createCell(cellnum);
+		Sheet sheet = wb.getSheet(sheetName);
+		Row row = wb.getSheet(sheetName).getRow(rownum);
+		
+		CellStyle cs = wb.createCellStyle();
+		cs.setWrapText(true);
+		cs.setAlignment(HorizontalAlignment.CENTER);
+		cs.setVerticalAlignment(VerticalAlignment.CENTER);
+		
+		cell.setCellStyle(cs);
+		
 		cell.setCellValue(value);
+		
+		// increase row height to accommodate three lines of text
+		row.setHeightInPoints((numberOfLinesInString * sheet.getDefaultRowHeightInPoints()));
+
+		// adjust column width to fit the content
+		sheet.autoSizeColumn(cellnum);
 		
 		FileOutputStream fos = new FileOutputStream(IConstantsUtility.ExcelFilePath);
 		wb.write(fos);

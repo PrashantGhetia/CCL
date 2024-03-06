@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-28T18:00:24 IST" name="Default suite" finished-at="2024-02-28T18:01:19 IST" duration-ms="54897">
+  <suite started-at="2024-03-06T12:25:27 IST" name="Default suite" finished-at="2024-03-06T12:27:49 IST" duration-ms="142145">
     <groups>
     </groups>
-    <test started-at="2024-02-28T18:00:24 IST" name="Default test" finished-at="2024-02-28T18:01:19 IST" duration-ms="54897">
-      <class name="com.javaPractice.javaPractice.CCLNewTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:00:24 IST" name="launchBrowser" finished-at="2024-02-28T18:00:26 IST" duration-ms="1877" status="PASS">
+    <test started-at="2024-03-06T12:25:27 IST" name="Default test" finished-at="2024-03-06T12:27:49 IST" duration-ms="142145">
+      <class name="com.javaPractice.javaPractice.CCLNewNew">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:25:27 IST" name="launchBrowser" finished-at="2024-03-06T12:25:29 IST" duration-ms="2562" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:00:26 IST" name="test1" data-provider="excelsheet" finished-at="2024-02-28T18:00:41 IST" duration-ms="15073" status="PASS">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:25:30 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:25:52 IST" duration-ms="21640" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,39 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:00:41 IST" name="test1" data-provider="excelsheet" finished-at="2024-02-28T18:00:51 IST" duration-ms="9246" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9426598339]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Sital@2024]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:00:51 IST" name="test1" data-provider="excelsheet" finished-at="2024-02-28T18:01:00 IST" duration-ms="9076" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9428498829]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[rupal2101]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:01:00 IST" name="test1" data-provider="excelsheet" finished-at="2024-02-28T18:01:09 IST" duration-ms="9657" status="PASS">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:25:52 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:26:03 IST" duration-ms="11020" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,7 +43,55 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewTest@3bb9a3ff]" started-at="2024-02-28T18:01:09 IST" name="test1" data-provider="excelsheet" finished-at="2024-02-28T18:01:19 IST" duration-ms="9263" status="PASS">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:26:03 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:26:14 IST" duration-ms="10552" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8866214990]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Tinu@2024]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:26:14 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:26:25 IST" duration-ms="11035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9426598339]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sital@2024]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:26:25 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:26:39 IST" duration-ms="14592" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9426835092]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sonal@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:26:39 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:26:50 IST" duration-ms="10671" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -91,7 +107,87 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-      </class> <!-- com.javaPractice.javaPractice.CCLNewTest -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:26:50 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:27:00 IST" duration-ms="10364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9428777375]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[kathan123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:27:00 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:27:12 IST" duration-ms="11325" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9638891313]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bhavu113]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:27:12 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:27:22 IST" duration-ms="10787" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9428498829]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rupal2101]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:27:22 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:27:32 IST" duration-ms="9911" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7600915442]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Gsdlmg@1997]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:com.javaPractice.javaPractice.CCLNewNew@3bb9a3ff]" started-at="2024-03-06T12:27:32 IST" name="test1" data-provider="excelsheet" finished-at="2024-03-06T12:27:49 IST" duration-ms="16684" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9662260695]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Krishna@1703]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+      </class> <!-- com.javaPractice.javaPractice.CCLNewNew -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

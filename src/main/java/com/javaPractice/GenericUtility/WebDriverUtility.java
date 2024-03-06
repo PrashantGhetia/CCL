@@ -5,7 +5,11 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -343,4 +347,25 @@ public class WebDriverUtility {
 			js.executeScript("window.open()");
 		}
 
+		public long daysBetweenDates(String startDate, String endDate) {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			Scanner sc = new Scanner(System.in);
+	        LocalDate firstDate = LocalDate.parse(startDate, formatter);
+	        LocalDate secondDate = LocalDate.parse(endDate, formatter);
+	        long days = ChronoUnit.DAYS.between(firstDate, secondDate);
+			return days;
+		}
+		
+		public String convertStringWithWhitespaceIntoMultipleLinesString(String string) {
+			String[] words=string.split("\\s"); 
+			String converted = "";
+			for(int i=0; i<=words.length-1;i++) {
+				converted = converted + words[i] + "\n";
+			}
+			return converted.trim();
+		}
+		
+		public String removeWhiteSpaceFromString(String string) {
+			return string.replaceAll("\\s", "");
+		}
 }

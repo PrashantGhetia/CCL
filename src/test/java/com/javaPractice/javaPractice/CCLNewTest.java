@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -29,10 +30,11 @@ public class CCLNewTest {
 	Date date = new Date();
 	WebDriver driver = null;
 	int i = 1;
-
 	@BeforeTest
 	public void launchBrowser() {
 		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.setHeadless(true);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -70,12 +72,12 @@ public class CCLNewTest {
 		int numberOfCountdown = countdowns.size();
 		System.out.println("Number of Countdown: " + numberOfCountdown);
 
-		int j = 5;
+		int j = 6;
 		for (WebElement countdown : countdowns) {
 			try {
 				wUtil.waitForElementToBeVisible(driver, countdown);
 				String countDown = countdown.getText().replaceAll("[\r\n]+", "");
-				eUtil.writeDataIntoExcel("CCL1", i, j, countDown);
+				eUtil.writeDataIntoExcel("CCL1", i, j, countDown, 1);
 				System.out.println("Countdown :"+countDown);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -85,7 +87,7 @@ public class CCLNewTest {
 
 		List<WebElement> getIncomes = driver.findElements(By.xpath("//div[text()='Get Income']"));
 		int numberOfGetIncome = getIncomes.size();
-		System.out.println("Number of Elements: " + numberOfGetIncome);
+		//System.out.println("Number of Elements: " + numberOfGetIncome);
 
 		for (WebElement getIncome : getIncomes) {
 			try {
@@ -103,10 +105,16 @@ public class CCLNewTest {
 		Thread.sleep(5000);
 		WebElement balance = driver.findElement(By.xpath("//div[@class='balance']//span"));
 		wUtil.waitForElementToBeVisible(driver, balance);
+		
+		WebElement id = driver.findElement(By.xpath("//div[@class='id-area']//div"));
+		eUtil.writeDataIntoExcel("CCL1", i, 0, id.getText().replaceAll("ID: ", ""), 1);
+		
+		WebElement today = driver.findElement(By.xpath("(//div[text()='Income : '])[2]//span"));
+		eUtil.writeDataIntoExcel("CCL1", i, 5, today.getText(), 1);
 
-		eUtil.writeDataIntoNewExcel("CCL1", i, 3, formatter.format(date));
+		eUtil.writeDataIntoExcel("CCL1", i, 3, wUtil.convertStringWithWhitespaceIntoMultipleLinesString(formatter.format(date)), 2);
 		System.out.println("Date: "+formatter.format(date));
-		eUtil.writeDataIntoNewExcel("CCL1", i, 4, balance.getText());
+		eUtil.writeDataIntoExcel("CCL1", i, 4, balance.getText(), 1);
 		System.out.println("Balance: "+balance.getText());
 
 		WebElement signout = driver.findElement(By.xpath("//div[text()='Sign Out']"));

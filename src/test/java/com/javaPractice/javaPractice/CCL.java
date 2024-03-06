@@ -71,7 +71,7 @@ public class CCL {
 		WebElement countdown = driver.findElement(By.xpath("//div[text()='COUNTDOWN']/parent::*//div[@class='v']"));
 		wUtil.waitForElementToBeVisible(driver, countdown);
 		String countDown = countdown.getText().replaceAll("[\r\n]+", "");
-		eUtil.writeDataIntoExcel("CCL1", i, 5, countDown);
+		eUtil.writeDataIntoExcel("CCL1", i, 5, countDown, 1);
 		
 		try {
 			WebElement getIncome = driver.findElement(By.xpath("//div[text()='Get Income']"));
@@ -91,8 +91,8 @@ public class CCL {
 			WebElement balance = driver.findElement(By.xpath("//div[@class='balance']//span"));
 			wUtil.waitForElementToBeVisible(driver, balance);
 			
-			eUtil.writeDataIntoNewExcel("CCL1", i, 3, formatter.format(date));
-			eUtil.writeDataIntoNewExcel("CCL1", i, 4, balance.getText());
+			eUtil.writeDataIntoExcel("CCL1", i, 3, formatter.format(date), 0);
+			eUtil.writeDataIntoExcel("CCL1", i, 4, balance.getText(), 0);
 			
 			WebElement signout = driver.findElement(By.xpath("//div[text()='Sign Out']"));
 			wUtil.waitForElementToBeVisible(driver, signout);
@@ -142,7 +142,7 @@ public class CCL {
 			WebElement countdown = driver.findElement(By.xpath("//div[text()='COUNTDOWN']/parent::*//div[@class='v']"));
 			wUtil.waitForElementToBeVisible(driver, countdown);
 			String countDown = countdown.getText().replaceAll("[\r\n]+", "");
-			eUtil.writeDataIntoExcel("CCL", i, 5, countDown);
+			eUtil.writeDataIntoExcel("CCL", i, 5, countDown, 0);
 			
 			try {
 				WebElement getIncome = driver.findElement(By.xpath("//div[text()='Get Income']"));
