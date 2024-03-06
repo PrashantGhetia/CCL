@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -22,7 +23,7 @@ import com.javaPractice.GenericUtility.WebDriverUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CCLNewTest {
+public class CCLTest {
 	WebDriverUtility wUtil = new WebDriverUtility();
 	ExcelFileUtility eUtil = new ExcelFileUtility();
 	JavaUtility jUtil = new JavaUtility();
@@ -53,6 +54,7 @@ public class CCLNewTest {
 		WebElement phoneTextField = driver.findElement(By.id("var-input-9"));
 		wUtil.waitForElementToBeVisible(driver, phoneTextField);
 		phoneTextField.sendKeys(phoneNumber);
+		System.out.println();
 		System.out.println("Phone Number: "+phoneNumber );
 
 		WebElement passwordTextField = driver.findElement(By.id("var-input-14"));
@@ -80,7 +82,6 @@ public class CCLNewTest {
 				eUtil.writeDataIntoExcel("CCL1", i, j, countDown, 1);
 				System.out.println("Countdown :"+countDown);
 			} catch (Exception e) {
-				// TODO: handle exception
 			}
 			j++;
 		}
@@ -95,27 +96,12 @@ public class CCLNewTest {
 				wUtil.waitForElementToBeVisible(driver, getIncome);
 				getIncome.click();
 			} catch (Exception e) {
-				// e.printStackTrace();
 			}
 		}
+		System.out.println();
 		WebElement my = driver.findElement(By.xpath("//span[text()='My']"));
 		wUtil.waitForElementToBeVisible(driver, my);
 		my.click();
-
-		Thread.sleep(5000);
-		WebElement balance = driver.findElement(By.xpath("//div[@class='balance']//span"));
-		wUtil.waitForElementToBeVisible(driver, balance);
-		
-		WebElement id = driver.findElement(By.xpath("//div[@class='id-area']//div"));
-		eUtil.writeDataIntoExcel("CCL1", i, 0, id.getText().replaceAll("ID: ", ""), 1);
-		
-		WebElement today = driver.findElement(By.xpath("(//div[text()='Income : '])[2]//span"));
-		eUtil.writeDataIntoExcel("CCL1", i, 5, today.getText(), 1);
-
-		eUtil.writeDataIntoExcel("CCL1", i, 3, wUtil.convertStringWithWhitespaceIntoMultipleLinesString(formatter.format(date)), 2);
-		System.out.println("Date: "+formatter.format(date));
-		eUtil.writeDataIntoExcel("CCL1", i, 4, balance.getText(), 1);
-		System.out.println("Balance: "+balance.getText());
 
 		WebElement signout = driver.findElement(By.xpath("//div[text()='Sign Out']"));
 		wUtil.waitForElementToBeVisible(driver, signout);
@@ -126,6 +112,10 @@ public class CCLNewTest {
 		confirm.click();
 		driver.navigate().refresh();
 		i++;
+	}
+	@AfterTest
+	public void closeBrowser() {
+		driver.quit();
 	}
 
 }
