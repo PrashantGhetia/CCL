@@ -23,7 +23,7 @@ import com.javaPractice.GenericUtility.WebDriverUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CCLNewNew {
+public class CCLNewNewTest {
 	WebDriverUtility wUtil = new WebDriverUtility();
 	ExcelFileUtility eUtil = new ExcelFileUtility();
 	JavaUtility jUtil = new JavaUtility();
